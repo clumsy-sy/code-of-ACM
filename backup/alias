@@ -1,4 +1,4 @@
-alias b="g++ lab.cpp -DRYLOCAL -Wall -Wextra"
+alias b="g++ lab.cpp -DRYLOCAL -Wall -Wextra -Wno-unknown-pragmas"
 
 alias r="./a.out"
 
