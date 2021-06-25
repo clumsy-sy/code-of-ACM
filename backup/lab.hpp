@@ -1,12 +1,9 @@
 #include <iostream>
+#include <cstring>
 #include <cmath>
 #include <cstdio>
 #include <algorithm>
-#include <cstring>
 #include <functional>
-#include <queue>
-#include <stack>
-#include <list>
 #include <map>
 #include <ctime>
 

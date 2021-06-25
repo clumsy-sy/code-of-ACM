@@ -10,6 +10,7 @@ using namespace std;
 typedef long long ll;
 
 #define INF 0x3f3f3f3f
+#define dbg(x) printf("%d ", (x))
 #define LN putchar('\n')
 
 ll read() {
@@ -30,6 +31,10 @@ ll read() {
 #pragma endregion
 
 int main() {
-    
+    int t;
+    cin >> t;
+    while (t--) {
+        
+    }
     return 0;
 }
