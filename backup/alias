@@ -1,9 +1,0 @@
-alias b="g++ lab.cpp -DRYLOCAL -Wall -Wextra -Wno-unknown-pragmas"
-
-alias r="./a.out"
-
-alias br="b && r"
-
-alias c="clang lab.c -DRYLOCAL -Wall -Wextra -lm"
-
-alias h="g++ lab.hpp"
