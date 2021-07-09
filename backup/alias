@@ -1,0 +1,9 @@
+alias b="clang++ lab.cpp -DRYLOCAL -Wall -Wextra"
+
+alias r="./a.out"
+
+alias br="b && r"
+
+alias c="clang lab.c -DRYLOCAL -Wall -Wextra -lm"
+
+alias h="clang++ lab.hpp"
