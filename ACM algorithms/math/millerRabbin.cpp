@@ -4,7 +4,7 @@ using namespace std;
 typedef long long ll;
 // 2, 7, 61||2,325,9375,28178,450775,9780504,1795265022
 //但这几个数本身需要特判
-ll qp(ll n, ll x, l mod) {
+ll qp(ll n, ll x, ll mod) {
     ll res = 1;
     while (x) {
         if (x & 1)

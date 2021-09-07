@@ -1,34 +1,36 @@
 #pragma region
-
 #ifdef RYLOCAL
 #include "lab.hpp"
 #else
 #include <bits/stdc++.h>
 #endif
-
 using namespace std;
 typedef long long ll;
-
+#define INF 0x3f3f3f3f
+#define dbg(x) printf("%lld ", (x));
+#define LN putchar('\n')
 #define _fora(i, a, n) for (ll i = (a); i <= (n); i++)
 #define _forz(i, a, n) for (ll i = (a); i >= (n); i--)
 #define _fore(i, a) for (int i = head[(a)]; i; i = edge[i].nxt)
-#define LN putchar('\n')
-
-ll rr() {
-    ll s = 0, w = 1;
-    char c = getchar();
-    while (c < '0' || c > '9') {
-        if (c == '-')
-            w = -1;
-        c = getchar();
+inline ll read() {
+    ll x = 0, f = 1;
+    char ch = getchar();
+    while (ch < '0' || ch > '9') {
+        if (ch == '-')
+            f = -1;
+        ch = getchar();
     }
-    while (c >= '0' && c <= '9') {
-        s = s * 10 + c - '0';
-        c = getchar();
+    while (ch >= '0' && ch <= '9') {
+        x = x * 10 + ch - '0';
+        ch = getchar();
     }
-    return s * w;
+    return x * f;
 }
-
+inline void write(int x) {
+    if (x > 9)
+        write(x / 10);
+    putchar(x % 10 + '0');
+}
 #pragma endregion
 
 int main() {
