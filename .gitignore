@@ -1,4 +1,7 @@
 0/
 .vscode/
 .clang-format
-.backup/
+backup/
+.cph/
+problem/
+pyfile/
