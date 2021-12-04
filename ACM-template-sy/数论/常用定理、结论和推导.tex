@@ -1,0 +1,280 @@
+\textbf{1. 基础内容}
+$$
+\begin{aligned}
+\sum_{i=1}^{n}i^{2}&=\frac{n(n+1)(2n+1)}{6}  \\
+\sum_{i=1}^{n}i^{3}&=\left(\frac{n(n+1)}{2}\right)^{2}
+\end{aligned}
+$$
+\textbf{导数}
+$$f'(x)=\lim\limits_{\Delta x \rightarrow 0} \frac{\Delta y}{\Delta x}=\lim\limits_{\Delta x \rightarrow 0} \frac{f(x+\Delta x)-f(x)}{\Delta x}$$
+$$[f(x)\pm g(x)]'=f'(x)\pm g'(x)$$
+$$[f(x)g(x)]'=f'(x)g(x)+f(x)g'(x)$$
+$$[\frac{f(x)}{g(x)}]'=\frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^2}$$
+$$\frac{d}{dx}f(g(x))=\frac{df}{dg}(g(x))\frac{dg}{dx}(x)$$
+\textbf{导数公式}\\
+若 $f(x)=C (C 为常数 )$，则 $f'(x)=0$ \\
+若 $f(x)=x^{a} (\alpha \in \mathbb{Q}^{*})$，则 $f'(x)=ax^{a-1}$ \\
+若 $f(x)=sin(x)$，则 $f'(x)=cos(x)$ \\ 
+若 $f(x)=cos(x)$，则 $f'(x)=-sin(x)$ \\
+若 $f(x)=a^x$，则 $f'(x)=a^x\ln a$ \\
+若 $f(x)=e^x$，则 $f'(x)=e^x$ \\
+若 $f(x)=\log_{a}x$，则 $f'(x)=\frac{1}{x\ln a}$ \\
+若 $f(x)=\ln x$，则 $f'(x)=\frac{1}{x}$ \\
+\textbf{积分}
+$$\int_{a}^{b} f(x)\mathrm{d}x=\sum\limits_{i=1}^{n} f(\xi_{i})\Delta x_i=\lim\limits_{n \rightarrow \infty} \sum\limits_{i=1}^{n} f[a+\frac{i}{n}(b-a)] \frac{b-a}{n}$$
+$$\int_{a}^{b}f(x)\mathrm{d}x=\left.F(x)\right|_{a} ^{b}=F(b)-F(a)（其中 F'(x)=f(x)）$$
+$$\int_{a}^{b}kf(x)\mathrm{d}x=k\int_{a}^{b} f(x)\mathrm{d}x$$
+$$\int_{a}^{b}[f(x)\pm g(x)]\mathrm{d}x=\int_{a}^{b}f(x)\mathrm{d}x\pm \int_{a}^{b}g(x)\mathrm{d}x$$
+$$\int_{a}^{b}f(x)\mathrm{d}x=\int_{a}^{c}f(x)\mathrm{d}x+\int_{c}^{b}f(x)\mathrm{d}x$$
+$$\int_{a}^{b}f(x)\mathrm{d}x=-\int_{b}^{a}f(x)\mathrm{d}x$$
+$$\int_{a}^{a}f(x)\mathrm{d}x=0$$
+\textbf{积分公式}
+$$
+\begin{aligned}
+\int k\,\mathrm{d} x&=kx+C\\
+\int x^a\,\mathrm{d}x&=\frac{x^{a+1}}{a+1}+C (a\neq -1)\\
+\int \frac{\mathrm{d}x}{x}&=\ln|x|+C\\
+\int e^x\,\mathrm{d}x&=e^x+C\\
+\int a^x\,\mathrm{d}x&=\frac{a^x}{\ln a}+C\\
+\int \frac{\mathrm{d}x}{1+x^2}&=arctan(x)+C\\
+\int \frac{\mathrm{d}x}{\sqrt{1-x^2}}&=arcsin(x)+C\\
+\int cos(x)\,\mathrm{d}x&=sin(x)+C\\
+\int sin(x)\,\mathrm{d}x&=-cos(x)+C\\
+\int \frac{\mathrm{d}x}{cos^2(x)}\,\mathrm{d}x&=\int sec^2(x)\,\mathrm{d}x=tan(x)+C\\
+\int \frac{\mathrm{d}x}{sin^2(x)}\,\mathrm{d}x&=\int csc^2(x)\,\mathrm{d}x=-cot(x)+C\\
+\int sec(x)tan(x)\,\mathrm{d}x&=sec(x)+C\\
+\int csc(x)cot(x)\,\mathrm{d}x&=-csc(x)+C
+\end{aligned}
+$$
+\textbf{2.上升幂与下降幂}
+$$x^{\underline{n}}=(x-1)^{\underline{n-1}}x=\frac{(x)!}{(x-n)!}=\prod_{i=x-n+1}^{x} i (x^{\underline{0}}=1)$$
+$$x^{\overline{n}}=(x+1)^{\overline{n-1}}x=\frac{(x+n-1)!}{(x-1)!}=\prod_{i=x}^{x+n-1} i (x^{\overline{0}}=1)$$
+\textbf{推导结论}
+$$
+\begin{aligned}
+x^{\underline{n}}&=(-1)^n(-x)^{\overline{n}} \\
+x^{\overline{n}}&=(-1)^n(-x)^{\underline{n}}\\
+x^{\underline{n}}&=A_{x}^{n}\\
+x^{\overline{n}}&=A_{x+n-1}^{n}
+\end{aligned}
+$$
+\textbf{3. 单位根}
+$$\omega_{n}^{k}=\cos(\frac{2\pi k}{n})+\sin(\frac{2\pi k}{n})i$$
+$$\omega_{n}^{k}=g^{\frac{k(P-1)}{n}}\mod P (P=k2^{t}+1,P\in \{Prime\})$$
+\textbf{推导结论}
+$$
+\begin{aligned}
+\omega_{n}^{k}&=(\omega_{n}^{1})^{k}\\
+\omega_{n}^{j}\omega_{n}^{k}&=\omega_{n}^{j+k}\\
+\omega_{2n}^{2k}&=\omega_{n}^{k}\\
+\omega_{n}^{(k+n/2)}&=-\omega_{n}^{k} (n 为偶数 )\\
+\sum_{i=1}^{n-1}\omega_{n}^{i}&=0
+\end{aligned}
+$$
+\textbf{4. Fibonacci数列}
+$$fib_{n}=\begin{cases}0&n=0\\ 1&n=1\\ fib_{n-1}+fib_{n-2}&n>1\end{cases}$$
+\textbf{推导结论}
+$$
+\begin{aligned}
+\sum_{i=1}^{n}{f_{i}}&=f_{n+2}-1\\
+\sum_{i=1}^{n}{f_{2i-1}}&=f_{2n}\\
+\sum_{i=1}^{n}{f_{2i}}&=f_{2n+1}-1\\
+\sum_{i=1}^{n}{(f_{i})^2}&=f_{i}f_{i+1}
+\end{aligned}
+$$
+$$f_{n+m}=f_{n-1}f_{m-1}+f_{n}f_{m}$$
+$$(f_{n})^2=(-1)^{(n-1)}+f_{n-1}f_{n+1}$$
+$$f_{2n-1}=(f_{n})^2-(f_{n-2})^2$$
+$$f_{n}=\frac{f_{n+2}+f_{n-2}}{3}$$
+$$\frac{f_{i}}{f_{i-1}} \approx \frac{\sqrt{5}-1}{2} \approx 0.618$$
+$$f_{n}=\frac{\left(\frac{1+\sqrt{5}}{2}\right)^{n}-\left(\frac{1-\sqrt{5}}{2}\right)^{n}}{\sqrt{5}} $$
+\textbf{5. GCD 和 LCM}
+$$
+\begin{aligned}
+&\gcd(a,b)=\gcd(b,a-b) (a>b)\\
+&\gcd(a,b)=\gcd(b,a \mod b)\\
+&\gcd(a,b)\operatorname{lcm}(a,b)=ab
+\end{aligned}
+$$
+\textbf{推导结论}
+$$k | \gcd(a,b) \iff k|a 且 k|b$$
+$$\gcd(k,ab)=1 \iff \gcd(k,a)=1 且 \gcd(k,b)=1$$
+$$(a+b)\mid ab\Longrightarrow \gcd(a,b)\neq 1$$
+在 Fibonacc 数列中求相邻两项的 $\gcd$ 时，辗转相减次数等于辗转相除次数。
+$$\gcd\left(fib_{n},fib_{m}\right)=fib_{\gcd(n,m)}$$
+\textbf{6. 裴蜀定理}\\
+设 $a,b$ 是不全为零的整数，则存在整数 $x,y$ , 使得 $ax+by=\gcd(a,b)$
+$$\gcd(a,b)|d \iff \exists x,y\in\mathbb{Z},ax+by=d$$
+\textbf{推导结论} \\
+设不定方程 $ax+by=\gcd(a,b)$ 的一组特解为 $\begin{cases}x=x_0\\ y=y_0\end{cases}$，则 $ax+by=c (\gcd(a,b)|c)$ 的通解为 $\begin{cases}x=\frac{c}{\gcd(a,b)}x_0+k\frac{b}{\gcd(a,b)}\\ y=\frac{c}{\gcd(a,b)}y_0-k\frac{a}{\gcd(a,b)}\end{cases}(k\in\mathbb{Z})$ 。
+$\forall a,b,z\in\mathbb{N^{*}},\gcd(a,b)=1, \exists x,y\in\mathbb{N^{}}, ax+by=ab-a-b+z $ \\
+\textbf{7. 同余运算}
+$$
+\begin{aligned}
+&\begin{cases}a\equiv b(\bmod m)\\ c\equiv d(\bmod m)\end{cases}\Longrightarrow a+c\equiv b+d(\bmod m) \\
+&\begin{cases}a\equiv b(\bmod m)\\ c\equiv d(\bmod m)\end{cases}\Longrightarrow a-c\equiv b-d(\bmod m) \\
+&a\equiv b(\bmod m)\Longrightarrow ak\equiv bk(\bmod m) \\
+&ka\equiv kb(\bmod m),\gcd(k,m)=1\Longrightarrow a\equiv b(\bmod m)
+\end{aligned}
+$$
+\textbf{8. 费马小定理及其扩展}
+$$P\in\{Prime\},P\nmid a\Longrightarrow a^{P-1}=1(\bmod P)$$
+\textbf{推导结论}\\
+对于任意多项式 $F(x)=\sum_{i=0}^{\infty}a_i x^i$（$a_i$ 对一个质数 $P$ 取模），若满足 $a_{0}\equiv 1(\bmod P)$，则 $\forall n\leqslant P,F^{P}(x)\equiv 1(\bmod x^{n})$ 。\\
+\textbf{9. 中国剩余定理（CRT）及其扩展}\\
+若 $m_1,m_2...m_k$ 两两互素，则同余方程组 $$\begin{cases}x\equiv a_{1}\left(\bmod m_{1}\right)\\ x\equiv a_{2}\left(\bmod m_{2}\right)\\ \vdots\\ x\equiv a_{k}\left(\bmod m_{k}\right)\end{cases}$$ 有唯一解为：$x=\sum_{i=1}^{k}a_iM_iM_i^{-1}$, 其中 $M_i=\prod_{j\neq i}m_j$ 。\\
+\textbf{10. 佩尔（Pell）方程}\\
+形如 $x^2-Dy^2=1 (D\in\mathbb{N^{*}}\text{且为非平方数})$ 的方程被称为第一类佩尔方程。设它的一组最小正整数解为 $\begin{cases}x=x_0\\ y=y_0\end{cases}$, 则其第 n 个解满足：$x_n+\sqrt{D}y_n=(x_0+\sqrt{D}y_0)^{n+1}$, 递推式为 $\begin{cases}x_n=x_0x_{n-1}+Dy_0y_{n-1}\\ y_n=x_0y_{n-1}+y_0x_{n-1}\end{cases}$ 。\\
+形如 $x^2-Dy^2=-1 (D\in\mathbb{N^{*}}\text{且为非平方数})$ 的方程被称为第二类佩尔方程。设它的一组最小正整数解为 $\begin{cases}x=x_0\\ y=y_0\end{cases}$, 则其第 n 个解满足：$x_n+\sqrt{D}y_n=(x_0+\sqrt{D}y_0)^{2n+1}$ 。\\
+\textbf{11. 勾股方程}\\
+方程 $x^2+y^2=z^2$ 的正整数通解为 $$\begin{cases}x=k(u^2-v^2)\\ y=2kuv\\ z=k(u^2+v^2)\end{cases}(u,v\in\{Prime\},k\in\mathbb{N^{*}})$$, 且均满足 $\gcd(x,y,z)=k$ 。\\
+\textbf{12. 牛顿二项式定理}\\
+$$(x+y)^{n}=\sum_{i=0}^{n}C_{n}^{i}x^{n-i}y^i$$
+\textbf{推导结论} \\
+$$
+\begin{aligned}
+    \sum_{i=0}^{n}C_n^{i}&=2^n\\
+    \sum_{i=0}^{n}iC_n^{i}&=n2^{n-1}\\
+    \sum_{i=0}^{n}i^2C_n^{i}&=n(n+1)2^{n-1} 
+\end{aligned}
+$$
+\textbf{13. 广义牛顿二项式定理} 
+$$
+\begin{aligned}
+    &C_{r}^{n}=\begin{cases}0&n<0,r\in\mathbb{R}\\ 1&n=0,r\in\mathbb{R}\\ \frac{r(r-1)\cdots(r-n+1)}{n!}&n>0,r\in\mathbb{R}\end{cases}\\
+    &(1+x)^{-n}=\sum_{i=0}^{\infty}C_{-n}^{i}x^{i}=\sum_{i=0}^{\infty}(-1)^iC_{n+i-1}^{i}x^i\\
+    &(x+y)^{\alpha}=\sum_{i=0}^{\infty}C_{\alpha}^{i}x^{\alpha-i}y^i (x,y,\alpha\in\mathbb{R}\ \text{且}\ |\frac{x}{y}|<1)
+\end{aligned}
+$$
+\textbf{14. 斯特林数} \\
+$s_{n}^{m}=s_{n-1}^{m-1}+(n-1)s_{n-1}^{m} (s_{n}^{n}=1,s_{n}^{0}=0^{n})$【第一类斯特林数】 \\
+$S_{n}^{m}=S_{n-1}^{m-1}+mS_{n-1}^{m} (S_{n}^{n}=1,S_{n}^{0}=0^{n})$【第二类斯特林数】\\
+$S_{n}^{m}=\frac{\sum_{i=0}^{m}(-1)^{m-i}C_{m}^{i}i^{n}}{m!}=\sum_{i=0}^{m} \frac{(-1)^{m-i}}{(m-i)!}\frac{i^{n}}{i !}$\\
+\textbf{推导结论} 
+$$
+\begin{aligned}
+n!&=\sum_{i=0}^{n}s_{n}^{i}\\
+x^{\overline{n}}&=\sum_{i=0}^{n}s_{n}^{i}x^i\\
+x^{\underline{n}}&=\sum_{i=0}^{n}s_{n}^{i}x^i(-1)^{n-i}\\
+x^n&=\sum_{i=0}^{x,n}S_{n}^{i}x^{\underline{i}}\\
+x^{n}&=\sum_{i=0}^{x,n}S_{n}^{i}x^{\overline{i}}(-1)^{n-i}\\
+\sum_{i=1}^{n}S_{n}^{i}s_{i}^{m}&=\sum_{i=0}^{n}s_{n}^{i}S_{i}^{m}\\
+\sum_{i=0}^{n} i^{k}&=\sum_{j=0}^{n}j!S_{k}^{j}C_{n+1}^{j+1}\\
+\sum_{i=1}^{n}C_{n}^{i}i^{k}&=\sum_{j=0}^{k} S_{k}^{j}2^{n-j}\frac{n!}{(n-j)!} 
+\end{aligned}
+$$
+\textbf{15. 贝尔数 (Bell)} 
+$$
+\begin{aligned}
+    B_n&=\sum_{i=1}^{n}S_{n}^{i} (B_0=1) \\
+    B_{n}&=\sum_{i=0}^{n-1}C_{n-1}^{i}B_{i}
+\end{aligned}
+$$
+\textbf{16. Polya 定理} 
+$$ans=\frac{\sum_{i=1}^{n}m^{k_{i}}}{n}$$
+\textbf{17. 容斥原理} \\
+$f(i)=\sum\limits_{j=i}^{n}(-1)^{j-i}C_{j}^{i}g(j) =g(i)-\sum\limits_{j=i+1}C_{j}^{i}f(j)$（$f(i)$ 为恰好 $i$ 个满足 $balabala$ 的方案数，$g(i)$ 为钦定 $i$ 个满足 $balabala$ 其他随意的方案数）\\
+\textbf{18. 生成函数} \\
+普通生成函数 (OGF) 收敛性式
+$$
+\begin{aligned}
+    \sum_{i=0}^{\infty}a^ix^i&=\frac{1}{1-ax}\\
+    \sum_{i=0}^{\infty}(i+1)x^i&=\frac{1}{(1-x)^2}\\
+    \sum_{i=0}^{\infty}C_{n}^{i}x^i&=(1+x)^n\\
+    \sum_{i=0}^{\infty}C_{n+i-1}^{i}x^i&=\frac{1}{(1-x)^n}\\
+    \sum_{i=0}^{\infty}fib_{i}x^i&=\frac{x}{1-x-x^2}（斐波那契数）\\
+    \sum_{i=0}^{\infty}(\sum_{j=0}^{i}fib_{j})x^i&=\frac{x}{(1-x)(1-x-x^2)}（斐波那契数列前缀和）\\
+    \sum_{i=0}^{\infty}cat_{i}x^i&=\frac{1-\sqrt{1-4x}}{2x}（卡特兰数）
+\end{aligned}
+$$
+指数生成函数 (EGF) 收敛性式
+$$
+\begin{aligned}
+\sum_{i=0}^{\infty}\frac{x^i}{i!}&=e^x\\
+\sum_{i=0}^{\infty}\frac{x^{2i}}{(2i)!}&=\frac{e^x+e^{-x}}{2}\\
+\sum_{i=0}^{\infty}\frac{x^{2i+1}}{(2i+1)!}&=\frac{e^x-e^{-x}}{2}\\
+\sum_{i=0}^{\infty}B_{i}\frac{x_{i}}{i!}&=e^{e^{x}-1}（贝尔数）
+\end{aligned}
+$$
+\textbf{19. 欧拉反演}\\
+$$\sum_{d|n}\varphi(d)=n （即 \varphi\ast 1=\operatorname{id}）$$
+\textbf{推导结论}
+$$
+\begin{aligned}
+\gcd(i,j)&=\sum_{d|i,d|j} \varphi(d)\\
+\sum_{i=1}^{n} \sum_{j=1}^{n} \gcd(i,j)&= \sum_{d=1}^{n}d\left(2\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}{\varphi(i)}-1\right)\\
+\sum_{i=1}^{n} \sum_{j=1}^{m} \gcd(i,j)&= \sum_{d=1}^{n} \varphi(d) \lfloor\frac{n}{d}\rfloor \lfloor\frac{m}{d}\rfloor\\
+\prod_{i=1}^{n} \prod_{j=1}^{n} \left(\frac{\operatorname{lcm}(i,j)}{\gcd(i,j)}\right)&= \frac{(n!)^{2n}}{\left(\prod_{d=1}^{n} d^{\left(2 S_{\varphi}(\lfloor\frac{n}{a}\rfloor)-1\right)}\right)^{2}}
+\end{aligned}
+$$
+\textbf{20. 狄利克雷卷积 (Dirichlet) 与莫比乌斯反演 (Mobius)} \\
+$(f \ast g)(n)=\sum_{d | n} f(d) g(\frac{n}{d})$\\
+$\sum_{d|n} \mu(d)=\epsilon(n)$ （即$ \mu\ast1=\epsilon$）\\
+$f(n)=\sum_{d | n} g(d) \Longrightarrow g(n)=\sum_{d | n} \mu(\frac{n}{d}) f(d)$ （即 $f=g\ast1 \Longrightarrow g=f\ast\mu$）\\
+$f(n)=\sum_{n | d} g(d) \Longrightarrow g(n)=\sum_{n | d} \mu(\frac{d}{n}) f(d)$\\
+$f(k)=\sum_{d=1}^{\lfloor\frac{n}{k}\rfloor} g(dk) \Longrightarrow g(k)=\sum_{d=1}^{\lfloor\frac{n}{k}\rfloor} \mu(d) f(dk)$\\
+\textbf{推导结论}\\
+\textbf{GCD 和 LCM}
+$$
+\begin{aligned}
+    \gcd(i,j)=1]&=\sum_{d|i,d|j} \mu(d)\\
+    \sum_{i=1}^{n}\sum_{i=1}^{m}[\gcd(i,j)=k]&= \sum_{d=1}^{\lfloor\frac{n}{k}\rfloor} \mu(d)\lfloor\frac{n}{d k}\rfloor\lfloor\frac{m}{d k}\rfloor \\
+    \sum_{i=1}^{n}\sum_{i=1}^{m}[\gcd(i,j)\in \{Prime\}]&= \sum_{d=1}^{n}\left(\lfloor\frac{n}{d}\rfloor\lfloor\frac{m}{d}\rfloor\sum_{p | d\ \&\ p\in\{Prime\}} \mu(\frac{d}{p})\right)\\
+    \sum_{i=1}^{n} \sum_{j=1}^{m} \operatorname{lcm}(i,j)&= \sum_{d=1}^{n} d\left(\sum_{x=1}^{\lfloor\frac{n}{d}\rfloor} x^{2} \mu(x) \sum_{i=1}^{\lfloor\frac{n}{dx}\rfloor} i\sum_{i=1}^{\lfloor\frac{m}{dx}\rfloor} j \right)
+\end{aligned}
+$$
+\textbf{除数函数} \\
+$\sigma_{k}=\sum_{d|n}d^{k}$（即 $\sigma_{k}=\operatorname{id}_{k}\ast1$） \\
+$\sigma_0(xy)=\sum_{i|x} \sum_{j|y}[\operatorname{gcd}(i,j)=1]$（其中 $\sigma_0(x)$ 表示 $x$ 的约数个数） \\
+$\sum_{i=1}^{n}\sigma_0(i)= \sum_{i=1}^{n}\lfloor\frac{n}{i}\rfloor$ \\
+$\sum_{i=1}^{n} \sum_{j=1}^{m} \sigma_0(ij)= \sum_{k=1}^{n}\mu(k)\left(\sum_{i=1}^{\lfloor\frac{n}{k}\rfloor}\lfloor{\frac{n}{ik}}\rfloor\right)\left(\sum_{i=1}^{\lfloor\frac{m}{k}\rfloor}\lfloor\frac{m}{i k}\rfloor\right)$\\
+$\sigma_{1}(xy)=\sum_{i\mid x}\sum_{j\mid y} \frac{iy}{j}[\gcd(i,j)=1]$（其中 $\sigma_0(x)$ 表示 $x$ 的约数和）\\
+$\sum_{i=1}^{n}\sum_{j=1}^{n}\sigma_1(ij)= \sum_{d=1}^{n}\mu(d)d \left(\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor} \sigma_1(i)\right)^{2}$\\
+$\sum_{i=1}^{n}\sum_{j=1}^{m} \sigma_1(\gcd(i,j))= \sum_{d=1}^{n}\lfloor\frac{n}{d}\rfloor\lfloor\frac{m}{d}\rfloor\left(\sum_{i|d}\mu(\frac{d}{i}) \sigma_1(i)\right)$\\
+\textbf{莫比乌斯函数}
+$$
+\begin{aligned}
+    \sum_{k=1}^{n}\mu^{2}(k)&=\sum_{d=1}^{\sqrt{n}}\mu(d)\lfloor \frac{n}{d^{2}}\rfloor\\
+    \sum_{i=1}^{n}\mu^2(i)\sqrt{\frac{n}{i}}&=n
+\end{aligned}
+$$
+\textbf{21. 二项式反演}
+$$f(n)=\sum_{i=0}^{n}C_{n}^{i}g(i) \Longleftrightarrow g(n)=\sum_{i=0}^{n}(-1)^{n-i}C_{n}^{i}f(i)$$
+$$f(n)=\sum_{i=0}^{n}(-1)^{i}C_{n}^{i}g(i)\Longleftrightarrow g(n)=\sum_{i=0}^{n}(-1)^{i}C_{n}^{i}f(i)$$
+$$f(n)=\sum_{i=n}^{?}C_{i}^{n}g(i) \Longleftrightarrow g(n)=\sum_{i=n}^{?}(-1)^{i-n}C_{i}^{n}f(i)$$
+$$f(n)=\sum_{i=n}^{?}(-1)^{i}C_{i}^{n}g(i)\Longleftrightarrow g(n)=\sum_{i=n}^{?}(-1)^{i}C_{i}^{n}f(i)$$
+\textbf{22. 斯特林反演}
+$$f(n)=\sum_{i=0}^{n} S_{n}^{i} g(i) \Longleftrightarrow g(n)=\sum_{i=0}^{n}(-1)^{n-i} s_{n}^{i} g(i)$$
+$$f(n)=\sum_{i=0}^{n}s_{n}^{i}g(i)\Longleftrightarrow g(n)=\sum_{i=0}^{n}(-1)^{n-i}S_{n}^{i}f(i)$$
+$$f(n)=\sum_{i=n}^{?} S_{i}^{n} g(i) \Longleftrightarrow g(n)=\sum_{i=n}^{?}(-1)^{i-n} s_{i}^{n} g(i)$$
+$$f(n)=\sum_{i=n}^{?}s_{i}^{n}g(i)\Longleftrightarrow g(n)=\sum_{i=n}^{?}(-1)^{i-n}S_{i}^{n}f(i)$$
+\textbf{23. 单位根反演}
+$$[n|k]=\frac{\sum_{i=0}^{n-1}w_{n}^{ik}}{n}$$
+$$[a=b]=\frac{\sum_{i=0}^{n-1} w_{n}^{a i} w_{n}^{-i b}}{n}(a,b<n)$$
+\textbf{24. 子集反演} \\
+$f(S)=\sum_{T\subseteq S}g(T)\Longleftrightarrow g(S)=\sum_{T\subseteq S}(-1)^{|S|-|T|}f(T)$ \\
+$f(S)=\sum_{T\supseteq S}g(T)\Longleftrightarrow g(S)=\sum_{T\supseteq S}(-1)^{|T|-|S|}f(T)$ \\
+$f(S)=\sum_{T\subseteq S}g(T)\Longleftrightarrow g(S)=\sum_{T\subseteq S}\mu(|S|-|T|)f(T)$（$\mu(S)$ 在 $S$ 有重复元素时为 $0$，否则为 $(-1)^{|S|}$） \\
+$f(S)=\sum_{T\supseteq S}g(T)\Longleftrightarrow g(S)=\sum_{T\supseteq S}\mu(|T|-|S|)f(T)$（$\mu(S) $在 $S$ 有重复元素时为 $0$，否则为 $(-1)^{|S|}$） \\
+\textbf{25. 最值反演（Min-Max 容斥）}
+$$
+\begin{aligned}
+    \max(S)&=\sum_{T\subseteq S}(-1)^{|T|+1}\min(T)\\
+    \min(S)&=\sum_{T\subseteq S}(-1)^{|T|+1}\max(T)\\
+    E(\max(S))&=\sum_{T\subseteq S}(-1)^{|T|+1}E(\min(T))\\
+    E(\min(S))&=\sum_{T\subseteq S}(-1)^{|T|+1}E(\max(T))\\
+    \text{K-th}\max(S)&=\sum_{T\subseteq S}(-1)^{|T|-k}C_{|T|-1}^{k-1}\min(T)\\
+    E(\text{K-th}\max(S))&=\sum_{T\subseteq S}(-1)^{|T|-k}C_{|T|-1}^{k-1}E(\min(T))
+\end{aligned}
+$$
+\textbf{26. 多项式}
+$$\begin{cases} F\left(\omega_{n}^{k}\right)=F l\left(\omega_{n / 2}^{k}\right)+\omega_{n}^{k} F R\left(\omega_{n / 2}^{k}\right) \\ F\left(\omega_{n}^{k+n / 2}\right)=F L\left(\omega_{n / 2}^{k}\right)-\omega_{n}^{k} F R\left(\omega_{n / 2}^{k}\right) \end{cases}$$
+$$\text {or :}\begin{cases} FWT:\left\{F_{0}=G_{0}, F_{1}=G_{0}+G_{1}\right\} \\ IFWT:\left\{G_{0}=F_{0}, G_{1}=F_{1}-F_{0}\right\} \end{cases}$$
+$$\text {and :}\begin{cases} FWT:\left\{F_{0}=G_{0}+G_{1}, F_{1}=G_{1}\right\} \\ IFWT:\left\{G_{0}=F_{0}-F_{1}, G_{1}=F_{1}\right\} \end{cases}$$
+$$\text {xor :}\begin{cases} F W T:\left\{F_{0}=G_{0}+G_{1}, F_{1}=G_{0}-G_{1}\right\} \\ I F W T:\left\{G_{0}=\frac{F_{0}+F_{1}}{2}, G_{1}=\frac{F_{0}-F_{1}}{2}\right\} \end{cases}$$
+\textbf{27. 拉格朗日插值} \\
+已知一个 $n$ 次多项式 $F(x)$ 不同的 $n+1$ 处点值 $(x_i,y_i)_{i\in[0,n]}$，则 $$F(X)=\sum_{i=0}^{n}\left(y_{i}\prod_{j\neq i}\frac{X-x_{j}}{x_{i}-x_{j}}\right)$$
+已知一个 $n$ 次多项式 $F(x)$ 不同的 $n+1$ 处点值 $(i,y_i)_{i\in[0,n]}$，则 $$F(m+x)=\frac{(m+x)!}{(m+x-n-1)!}\sum_{i=x}^{n+x}\frac{1}{m-n+i}g(n+x-i)$$，其中 $g(i)=\frac{y_i(-1)^{n-i}}{i!(n-i)!}$ 。 \\
+\textbf{28. 多项式求逆}\\
+设 $F(x)=\sum_{n=0}^{\infty}a_nx^n, F^{-1}(x)=\sum_{n=0}^{\infty}b_nx^n$，则 $$b_0=\frac{1}{a_0},b_n=\sum_{i=0}^{n-1}b_i\left(-\frac{a_{n-i}}{a_0}\right)$$ 。\\
+设 $F(x)G(x)\equiv 1(\bmod x^{n})$,$$F(x)G(x)^{\prime}\equiv 1(\bmod x^{\frac{n}{2}}), 则 G\equiv 2G^{\prime}-FG^{\prime 2}(\bmod x^{n})$$

@@ -1,0 +1,85 @@
+$$
+A_n^m = \dfrac{n!}{(n - m)!}
+$$
+$$
+C_n^m =\binom{n}{m}  = \dfrac{A_n^m}{m!} = \dfrac{n!}{m!(n - m)!}
+$$
+二项式定理
+$$
+(a + b)^n = \sum_{i=0}^{n}\binom{n}{i} a^{n - i}b^i
+$$
+不相邻的排列
+$1 \sim n$ 这 $n$ 个自然数中选 $k$ 个，这 $k$ 个数中任意两个数都不相邻的组合有 
+$$
+\binom{n-k+1}{k}
+$$
+绝对错排
+$$
+f(n) = (n - 1)(f(n - 1) + f(n - 2))
+$$
+前几项为 `0,1,2,9,44,265`。\\
+圆排列
+$n$ 个人全部来围成一圈，所有的排列数记为 $\mathrm Q_n^n$。考虑其中已经排好的一圈，从不同位置断开，又变成不同的队列。 所以有
+$$
+\mathrm Q_n^n \times n = \mathrm A_n^n \Longrightarrow \mathrm Q_n = \frac{\mathrm A_n^n}{n} = (n-1)!
+$$
+由此可知部分圆排列的公式：
+$$
+\mathrm Q_n^r = \frac{\mathrm A_n^r}{r} = \frac{n!}{r \times (n-r)!}
+$$
+组合数性质 | 二项式推论
+$$
+\binom{n}{m}=\binom{n}{n-m}
+$$
+相当于将选出的集合对全集取补集，故数值不变。（对称性）
+$$
+\binom{n}{k} = \frac{n}{k} \binom{n-1}{k-1}
+$$
+由定义导出的递推式。
+$$
+\begin{aligned}
+\binom{n}{m}=\binom{n-1}{m}+\binom{n-1}{m-1} \\
+\binom{n}{k} + \binom{n}{k - 1} = \binom{n + 1}{k}
+\end{aligned}
+$$
+组合数的递推式（杨辉三角的公式表达）。我们可以利用这个式子，在 $O(n^2)$ 的复杂度下推导组合数。
+$$
+\binom{n}{0}+\binom{n}{1}+\cdots+\binom{n}{n}=\sum_{i=0}^n\binom{n}{i}=2^n
+$$
+这是二项式定理的特殊情况。取 $a=b=1$ 就得到上式。
+$$
+\sum_{i=0}^n(-1)^i\binom{n}{i}=[n=0]
+$$
+二项式定理的另一种特殊情况，可取 $a=1, b=-1$。式子的特殊情况是取 $n=0$ 时答案为 $1$。
+$$
+\sum_{i=0}^m \binom{n}{i}\binom{m}{m-i} = \binom{m+n}{m}\ \ \ (n \geq m)
+$$
+拆组合数的式子，在处理某些数据结构题时会用到。
+$$
+\sum_{i=0}^n\binom{n}{i}^2=\binom{2n}{n}
+$$
+这是 $(6)$ 的特殊情况，取 $n=m$ 即可。
+$$
+\sum_{i=0}^ni\binom{n}{i}=n2^{n-1}
+$$
+带权和的一个式子，通过对 $(3)$ 对应的多项式函数求导可以得证。
+$$
+\sum_{i=0}^ni^2\binom{n}{i}=n(n+1)2^{n-2}
+$$
+与上式类似，可以通过对多项式函数求导证明。
+$$
+\sum_{l=0}^n\binom{l}{k} = \binom{n+1}{k+1}
+$$
+可以通过组合意义证明，在恒等式证明中较常用。
+$$
+\binom{n}{r}\binom{r}{k} = \binom{n}{k}\binom{n-k}{r-k}
+$$
+通过定义可以证明。
+$$
+\sum_{i=0}^n\binom{n-i}{i}=F_{n+1}
+$$
+其中 $F$ 是斐波那契数列。
+$$
+\sum_{l=0}^n \binom{l}{k} = \binom{n+1}{k+1}
+$$
+通过组合分析——考虑 $S={a_1, a_2, \cdots, a_{n+1}}$ 的 $k+1$ 子集数可以得证。

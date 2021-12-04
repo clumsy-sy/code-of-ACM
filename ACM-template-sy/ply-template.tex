@@ -1,0 +1,653 @@
+\documentclass{probook}
+
+% \usepackage{multicol}
+
+\geometry{
+  paperwidth=210mm,
+  paperheight=297mm,
+  margin=20mm,
+  left=15mm,
+  right=15mm,
+}
+% \geometry{
+%   paperwidth=297mm,
+%   paperheight=210mm,
+%   margin=20mm,
+%   left=15mm,
+%   right=15mm,
+% }
+
+\title{ACM 模板}
+\author{\href{https://github.com/clumsy-sy?tab=repositories}{sy}}
+
+\begin{document}
+\newcommand\mfrac[2]{\dfrac{#1\smash[b]{\strut}}{#2\smash[t]{\strut}}}
+\newcommand\ee{\mathrm{e}}
+\newcommand\dd{\mathrm{d}}
+\newcommand\uppi{\mathrm{\pi}}
+
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\DFT}{\operatorname{DFT}_{\omega_n}}
+\newcommand{\Id}{\operatorname{Id}}
+
+\maketitle
+
+\frontmatter
+
+\columnseprule=2pt
+\setlength{\columnsep}{30pt}
+% \begin{multicols}{1}
+% \begin{multicols}{2}
+
+\tableofcontents
+\setlength{\parindent}{0pt}
+\mainmatter
+
+
+\chapter{基础算法} 
+\section{快速输入输出} 
+\lstinputlisting[style=cpp,caption=/基础算法/read]{基础算法/read.cpp}
+\section{排序}
+本场最佳 sort(begin(), end())
+\lstinputlisting[style=cpp,caption=/基础算法/sort]{基础算法/sort.cpp}
+\section{求第k大数}
+\lstinputlisting[style=cpp,caption=/基础算法/kth-element]{基础算法/求第k个数.cpp}
+\section{求逆序对}
+\lstinputlisting[style=cpp,caption=/基础算法/inversion-pair]{基础算法/求逆序对.cpp}
+\section{C++高精度}
+\lstinputlisting[style=cpp,caption=/基础算法/high-accuracy]{基础算法/C++高精度.cpp}
+\section{python读入}
+\lstinputlisting[style=cpp,caption=/基础算法/python-read]{基础算法/read.py}
+\section{java大数}
+\lstinputlisting[style=cpp,caption=/基础算法/java-rehigh-accuracyad]{基础算法/read.java}
+
+
+\chapter{字符串}
+\section{前缀数组}
+pi 数组表示$[0 \dots i]$ 中最长的相等的真前缀与真后缀的长度,复杂度 $O(n)$\\
+每一位 $i$ 的值为 $i - 1$ 的 $+1$ 、相等、减少，令 $j$ 为当前匹配位置，则转移方程为 $j^{(n)} = \pi [j^{(n-1)}-1]$
+\lstinputlisting[style=cpp,caption=/字符串/前缀数组]{字符串/前缀数组.cpp} 
+\section{最小表示法}
+用来找出字符串 S （或数组）的循环同构串中字典序最小(大)的一个。
+\lstinputlisting[style=cpp,caption=/字符串/最小表示法]{字符串/最小表示法.cpp} 
+\section{Hash}
+\subsection{字符串Hash}
+字符串 hash 相当于把字符串变成 base 进制的数。
+\lstinputlisting[style=cpp,caption=/字符串/字符串Hash]{字符串/字符串Hash.cpp} 
+\subsection{图上Hash}
+当一个点和他连到的点组成的集合和另一个点和他连到的点组成的集合完全相同的话，那么他们的Hash值相同
+\lstinputlisting[style=cpp,caption=/字符串/图上Hash]{字符串/图上Hash.cpp} 
+\section{KMP算法} 
+\subsection{KMP} 
+预处理转移数组，转移数组的本质是匹配字符串的前缀数组，复杂度 $O(n + m)$
+\lstinputlisting[style=cpp,caption=/字符串/KMP]{字符串/KMP.cpp} 
+\subsection{EXKMP}
+\lstinputlisting[style=cpp,caption=/字符串/EXKMP]{字符串/EXKMP.cpp} 
+\section{Manacher}
+通过构造 + 对称的方式使得寻找最大回文串的复杂度将为 $O(N)$
+\lstinputlisting[style=cpp,caption=/字符串/Manacher]{字符串/Manacher.cpp} 
+\section{Trie树}
+\subsection{字典树}
+快速插入查找字符串
+\lstinputlisting[style=cpp,caption=/字符串/Trie树]{字符串/Trie树.cpp} 
+\subsection{0-1字典树}
+求一个数组中两数的最大异或和, 找出最短且满足异或和 $\geqslant k$ 的区间端点
+\lstinputlisting[style=cpp,caption=/字符串/0-1字典树]{字符串/0-1字典树.cpp} 
+\section{AC自动机}
+$O(N)$给定 n 个长度不超过 50 的由小写英文字母组成的单词，以及一篇长为 m 的文章。请问，有多少个单词在文章中出现了。
+本质 Tire + KMP 算法
+\lstinputlisting[style=cpp,caption=/字符串/AC自动机]{字符串/AC自动机.cpp} 
+\section{回文树}
+\lstinputlisting[style=cpp,caption=/字符串/回文树p]{字符串/回文树.cpp} 
+\section{Shift-And}
+\lstinputlisting[style=cpp,caption=/字符串/Shift-And]{字符串/Shift-And.cpp} 
+\section{序列自动机}
+\lstinputlisting[style=cpp,caption=/字符串/序列自动机]{字符串/序列自动机.cpp} 
+\section{fail树} 
+\lstinputlisting[style=cpp,caption=/字符串/fail树]{字符串/fail树.cpp} 
+\section{后缀数组} 
+\lstinputlisting[style=cpp,caption=/字符串/后缀数组]{字符串/后缀数组.cpp} 
+\section{后缀自动机} 
+\lstinputlisting[style=cpp,caption=/字符串/后缀自动机]{字符串/后缀自动机.cpp} 
+
+
+
+\chapter{计算几何}
+\section{基础准备} 
+\lstinputlisting[style=cpp,caption=/计算几何/基础准备]{计算几何/基础准备.cpp}
+\section{点与向量} 
+\lstinputlisting[style=cpp,caption=/计算几何/点与向量]{计算几何/点与向量.cpp}
+\section{直线、线段与圆} 
+\lstinputlisting[style=cpp,caption=/计算几何/直线、线段与圆]{计算几何/直线、线段与圆.cpp}
+\section{对称与交点} 
+\lstinputlisting[style=cpp,caption=/计算几何/对称与交点]{计算几何/对称与交点.cpp}
+\section{三角形} 
+三角形面积\\
+1. 两条边求叉积除二后的绝对值；\\
+2. 海伦公式：
+$$
+\begin{aligned}
+&S = \sqrt{p(p - a)(p - b)(p - c)}, \ p = \dfrac{a + b + c}{2} \\
+&S = \dfrac{ab\sin{c}}{2}
+\end{aligned}
+$$
+\lstinputlisting[style=cpp,caption=/计算几何/三角形]{计算几何/三角形.cpp}
+\section{小技巧} 
+\lstinputlisting[style=cpp,caption=/计算几何/小技巧]{计算几何/小技巧.cpp}
+\section{极角排序}
+\lstinputlisting[style=cpp,caption=/计算几何/极角排序]{计算几何/极角排序.cpp}
+
+\section{多边形} 
+任意凸多边形的外角和均为 $360^{\circ}$\\
+任意 $n$ 凸多边形内角和为 $(n - 2) 180^{\circ}$
+\subsection{点在多边形内}
+\lstinputlisting[style=cpp,caption=/计算几何/点在多边形内]{计算几何/点在多边形内.cpp}
+若这个多边形为凸多边形，只需要判断点是否在所有边的左边即可（按逆时针顺序排列的顶点集）\\
+textbf {判断线段是否在任意多边形内}\\
+1. 选段与多边形不相交\\
+2. 两端点都在多边形内
+\subsection{多边形面积} 
+\lstinputlisting[style=cpp,caption=/计算几何/多边形面积]{计算几何/多边形面积.cpp}
+\section{Pick 定理}
+计算顶点都在格点上的多边形的面积公式, $a$ 表示多边形内的点数，$b$ 表示多边形边界上的点数， $S$ 表示多边形面积。
+$$
+2S = 2a + b - 2, \ S = a + \dfrac{b}{a} - 1
+$$
+给多边形顶点求内部有多少点
+$$
+a = S - \dfrac{b}{2} + 1
+$$
+\section{凸包} 
+\subsection{二维凸包}
+\lstinputlisting[style=cpp,caption=/计算几何/二维凸包]{计算几何/二维凸包.cpp}
+\subsection{三维凸包} 
+\lstinputlisting[style=cpp,caption=/计算几何/三维凸包]{计算几何/三维凸包.cpp}
+\subsection{动态凸包} 
+\lstinputlisting[style=cpp,caption=/计算几何/动态凸包]{计算几何/动态凸包.cpp}
+\section{旋转卡壳} 
+\subsection{最远点对}
+\lstinputlisting[style=cpp,caption=/计算几何/最远点对]{计算几何/最远点对.cpp}
+\subsection{最小矩形覆盖} 
+\lstinputlisting[style=cpp,caption=/计算几何/最小矩形覆盖]{计算几何/最小矩形覆盖.cpp}
+\section{最小圆覆盖} 
+\lstinputlisting[style=cpp,caption=/计算几何/最小圆覆盖]{计算几何/最小圆覆盖.cpp}
+\section{半平面交}
+求多边形的面积并 
+\lstinputlisting[style=cpp,caption=/计算几何/半平面交]{计算几何/半平面交.cpp}
+\section{辛普森积分} 
+\subsection{自适应辛普森积分}
+对于一个定积分
+$$
+\int_{a}^{b} f(x) \mathrm{d}x = F(b) - F(a)
+$$
+但是如果原函数求导困难，可以使用二次函数逼近
+$$
+\int_{a}^{b} f(x) \mathrm{d}x \approx \dfrac{(b - a)}{6} (f(a) + 4 \times f(\dfrac{2}{a + b}) + f(b))
+$$
+主要用于求不规则的图形面积，以及简单函数求导（面积）
+\lstinputlisting[style=cpp,caption=/计算几何/自适应辛普森积分]{计算几何/自适应辛普森积分.cpp}
+\subsection{二重自适应辛普森积分} 
+$$
+\begin{aligned}
+\int_{a}^{b}\int_{c}^{d} f(x, y) \mathrm{d}x\mathrm{d}y &= \int_{a}^{b}F_x(y) \mathrm{d}y \approx \dfrac{b - a}{6} (F_x(a) + 4F_x(\dfrac{a + b}{2}) + F_x(b))) \\
+F_x(y) &= \int_{c}^{d} f(x, y) \mathrm{d}x \approx \dfrac{d - c}{6}(f(c, y) + 4f(\dfrac{d + c}{2}, y) + f(d, y))
+\end{aligned}
+$$
+\lstinputlisting[style=cpp,caption=/计算几何/二重自适应辛普森积分]{计算几何/二重自适应辛普森积分.cpp}
+\subsection{圆的面积并} 
+\lstinputlisting[style=cpp,caption=/计算几何/圆的面积并]{计算几何/圆的面积并.cpp}
+\section{闵可夫斯基和}
+给两个凸包 $A$, $B$, $q$ 次询问， 每次给一个移动量 $w$ 来移动 $B$ 凸包，问 $A$ 与 $B$ 是否有交点
+令 $a\in A, b \in B$, 则移动向量 $w$ 使得存在 $b + w = a$, 那么 $w$ 需要满足 $w = a - b$
+构造闵可夫斯基合 $C = {a + (-b)}$，只要判断移动向量是否在凸包 $C$ 内。
+\lstinputlisting[style=cpp,caption=/计算几何/闵可夫斯基和]{计算几何/闵可夫斯基和.cpp}
+
+
+
+\chapter{数论} 
+\section{乘法加速系列}
+\subsection{快速乘}
+处理超范围的取模乘法
+\lstinputlisting[style=cpp,caption=/数论/快速乘]{数论/快速乘.cpp}
+\subsection{快速幂}
+\lstinputlisting[style=cpp,caption=/数论/快速幂]{数论/快速幂.cpp}
+\subsection{虚数快速幂}
+\lstinputlisting[style=cpp,caption=/数论/虚数快速幂]{数论/虚数快速幂.cpp}
+\subsection{矩阵快速幂}
+\lstinputlisting[style=cpp,caption=/数论/矩阵快速幂]{数论/矩阵快速幂.cpp}
+\section{素数判断}
+\subsection{试除法}
+\lstinputlisting[style=cpp,caption=/数论/试除法]{数论/试除法.cpp}
+\subsection{Miller-Rabin}
+Miller-Rabin 素性测试 $O(k \log^3 n)$
+\lstinputlisting[style=cpp,caption=/数论/Miller-Rabin]{数论/Miller-Rabin.cpp}
+\section{欧拉} 
+\subsection{欧拉函数}
+$\varphi (i)$ 表示第 $i$ 个欧拉函数的值，表示从 $1$ 到 $i$ 中与 $i$ 互质的数的个数\\
+公式：
+$$
+\varphi (i) = x \times \prod_{i = 1}^{n}(1 - \dfrac{1}{p_i})(P_i 为 x 的质因子) 
+$$
+eg: $\varphi(8) = 8 \times(1 - \frac{1}{2}) = 4$ \\
+如果 $n, m$ 互质 $\varphi(n \times m) = \varphi(n) * \varphi(m)$\\
+如果 $p$ 是素数,且 $n$ 是 $p$ 的倍数， $\varphi(n \times p) = \varphi(n) * p$\\
+如果 $n$ 是素数 $\varphi(n) = n - 1$\\
+如果 $n$ 是奇数 $\varphi(2 \times n) = \varphi(n)$\\
+如果 $n \ge 2$ 是素数 $\varphi(n)$ 为偶数\\
+如果 $p$ 是素数 $\varphi(p^q) = p^q - p^{q - 1}$
+$$
+\begin{aligned}
+&\sum_{d|n} \varphi(d) = n \\
+&\sum_{i=1}^{n} [\gcd(n, i) = 1] = \varphi(n) \\
+&\sum_{i=1}^{n} i * [\gcd(n, i) = 1] = \left \lceil \dfrac{\varphi(n) * n}{2}  \right \rceil \\
+\end{aligned}
+$$
+\lstinputlisting[style=cpp,caption=/数论/欧拉函数]{数论/欧拉函数.cpp}
+\subsection{欧拉定理}
+$$
+a^{\varphi(m)} \equiv 1 \ (mod\ m ) (\gcd(a, m) = 1)
+$$
+欧拉降幂
+$$
+a^b \equiv 
+\begin{cases}
+&a^{b \ mod \ \varphi(p)}  \gcd(a, p) = 1 \\
+&a^b  \gcd(a, p) \neq 1, b \leqslant \varphi(p) (mod \ p) \\
+&a^{b \ mod \ \varphi(p) + \varphi(p)}  \gcd(a, p) \neq 1, b \geqslant \varphi(p)
+\end{cases}
+$$
+递归求 
+$$
+    2^{2^{2^{\dots}}} \mod p
+$$
+\lstinputlisting[style=cpp,caption=/数论/递归欧拉降幂]{数论/递归欧拉降幂.cpp}
+
+\section{威尔逊定理}
+当 $n$ 为质数时有：
+$$
+\begin{aligned}
+(n - 1)! &= -1\ (mod \  n) \\
+(n - 2)! &= 1 \ (mod \  n)
+\end{aligned}
+$$
+
+\section{费马定理}
+费马小定理 ：
+$$
+a^m \equiv a(mod\ m), a^{m - 1} \equiv 1(mod \ m)
+$$
+费马小定理降幂
+$$
+a^p \equiv a ^ {p \% m} (mod\ m)
+$$
+求逆元
+$$
+inv(a) = a ^ {m - 2}
+$$
+
+费马大定理：
+$$
+x^n + y ^n = z^n
+$$
+在 $n > 2$ 时无解， 当 $n = 2$时, 当 $a$ 为奇数 $a, \dfrac{a^2}{2}, \dfrac{a^2}{2} + 1$, 当 $a$ 为偶数 $a, \dfrac{a^2}{4} - 1, \dfrac{a^2}{4} + 1$
+
+\section{素数}
+\subsection{反素数}
+求因子个数一定的 最小的数 
+\lstinputlisting[style=cpp,caption=/数论/因子数固定的最小的数]{数论/因子数固定的最小的数.cpp}
+\subsection{因子数最多的数}
+\lstinputlisting[style=cpp,caption=/数论/因子数最多的数]{数论/因子数最多的数.cpp}
+\subsection{Pollard-Rho算法}
+可以判断一个数是否为质数（Miller-Rabin），如果不是质数可以求出最大的质因子, $O(N^{\frac{1}{4}})$
+\lstinputlisting[style=cpp,caption=/数论/Pollard-Rho]{数论/Pollard-Rho.cpp}
+\section{筛法}
+\subsection{埃拉托斯特尼}
+$O(n\log \log n)$ 可以生成一个筛树，并且可以筛一段区间 $[l, r]$ 内的质数
+\lstinputlisting[style=cpp,caption=/数论/埃拉托斯特尼]{数论/埃拉托斯特尼.cpp}
+\subsection{分块筛选}
+计算 $n$ 内质数的个数， 时间复杂度接近欧拉筛。(分块大小在 $10 ^ 4$ 到 $10 ^ 5$ 之间时效率最好)
+\lstinputlisting[style=cpp,caption=/数论/分块筛选]{数论/分块筛选.cpp}
+\subsection{线性筛}
+每次都是该数的 \textbf{最小质因子} 把它筛去，所有每个数只会被筛一次，复杂度 $O(n)$
+\lstinputlisting[style=cpp,caption=/数论/线性筛]{数论/线性筛.cpp}
+\subsection{线性筛欧拉函数}
+欧拉函数 ： $1 ~ n$ 中与 $n$ 互质的数的个数，由于欧拉函数是积性函数（非完全），所有可以用线性筛来加速，复杂度 $O(n)$
+\lstinputlisting[style=cpp,caption=/数论/线性筛欧拉函数]{数论/线性筛欧拉函数.cpp}
+\subsection{线性筛莫比乌斯函数}
+欧拉函数 ： $1 ~ n$ 中与 $n$ 互质的数的个数，由于欧拉函数是积性函数（非完全），所有可以用线性筛来加速，复杂度 $O(n)$
+\lstinputlisting[style=cpp,caption=/数论/线性筛莫比乌斯函数]{数论/线性筛莫比乌斯函数.cpp}
+\section{欧几里得算法}
+\subsection{GCD}
+\lstinputlisting[style=cpp,caption=/数论/GCD]{数论/gcd.cpp}
+\subsection{EXGCD} 
+\lstinputlisting[style=cpp,caption=/数论/EXGCD]{数论/exgcd.cpp}
+\subsection{中国剩余定理}
+\lstinputlisting[style=cpp,caption=/数论/中国剩余定理]{数论/中国剩余定理.cpp}
+\subsection{逆元} 
+求任意 $n$ 个数的逆元
+首先计算 $n$ 个数的前缀积，记为 $s_i$，然后使用快速幂或扩展欧几里得法计算 $s_n$ 的逆元，记为 $sv_n$。
+因为 $sv_n$ 是 $n$ 个数的积的逆元，所以当我们把它乘上 $a_n$ 时，就会和 $a_n$ 的逆元抵消，于是就得到了 $a_1$ 到 $a_{n-1}$ 的积逆元，记为 $sv_{n-1}$。
+同理我们可以依次计算出所有的 $sv_i$，于是 $a_i^{-1}$ 就可以用 $s_{i-1} \times sv_i$ 求得。
+所以我们就在 $O(n + \log p)$ 的时间内计算出了 $n$ 个数的逆元。
+\lstinputlisting[style=cpp,caption=/数论/Manacher/01.cpp]{数论/逆元.cpp}
+\section{高斯消元}
+\lstinputlisting[style=cpp,caption=/数论/高斯消元]{数论/高斯消元.cpp}
+\section{组合数学}
+\subsection{排列数与组合数}
+\input{数论/组合数.tex}
+\subsection{递推 + 预处理}
+$$
+\binom{n}{m} = \binom{n-1}{m} + \binom{n-1}{m-1}
+$$
+适用场景 $n \le 2000, m \le 2000$ 询问次数 $t \le 1e5$
+f[n][m] 就是答案
+\lstinputlisting[style=cpp,caption=/数论/递推+预处理]{数论/递推、预处理组合数.cpp}
+\subsection{逆元 + 预处理}
+$$
+\binom{n}{m} = \dfrac{n!}{(n-m)!m!} = (fac[n] * INV(fac[n-m]) * INV(fact[m])) \mod (prime)
+$$
+适用场景 $n \le 2e5, m \le 2e5$ 询问次数 $t \le 1e5$, \textbf{模数为质数}
+C(a, b) 为答案
+\lstinputlisting[style=cpp,caption=/数论/逆元+预处理]{数论/逆元、预处理组合数.cpp}
+\subsection{Lucas 定理}
+适用场景 $n, m \le 1e18$ 模数为质数且 $p \le 1e5$, 询问次数 $t \le 20$
+复杂度 $O(p + \log_p m)$
+lucas(a, b, p) 为答案
+\lstinputlisting[style=cpp,caption=/数论/Lucas 定理]{数论/卢卡斯定理.cpp}
+\subsection{高精度求组合数}
+对组合数公式的分子分母都有的因子进行处理，最后得到组合数为各个质数的幂次的乘积
+$$
+C_n^m = p_1^{a1} \times p_2^{a2}\times p_3^{a3}\times \dots \times p_n^{an}
+$$
+适用场景 $n, m \le 5000$
+\lstinputlisting[style=cpp,caption=/数论/高精度求组合数]{数论/高精度求组合数.cpp}
+\subsection{卡特兰数} 
+\input{数论/卡特兰数.tex}
+\lstinputlisting[style=cpp,caption=/数论/卡特兰数]{数论/卡特兰数.cpp}
+\subsection{康拓展开} 
+康托展开可以用来求一个 $1\sim n$ 的任意排列的排名。
+康托展开可以在 $O(n^2)$ 的复杂度内求出一个排列的排名，在用到树状数组优化时可以做到 $O(n\log n)$。
+$$
+X = a_n(n - 1)! + a_{n - 1}(n - 2) + \dots + a_1\times 0! 
+$$
+\lstinputlisting[style=cpp,caption=/数论/康拓展开]{数论/康拓展开.cpp} 
+\subsection{逆康拓展开} 
+由于康托展开是双射，所以可逆，从而通过排名求原组合, 可以用线段树维护区间第 $t$ 小值来优化到 $O(nlog(n))$
+\lstinputlisting[style=cpp,caption=/数论/逆康拓展开]{数论/逆康拓展开.cpp} 
+\section{0/1分数规划} 
+\input{数论/01分数规划.tex}
+\section{SG函数} 
+\lstinputlisting[style=cpp,caption=/数论/SG函数]{数论/SG函数.cpp} 
+\section{bsgs} 
+\lstinputlisting[style=cpp,caption=/数论/bsgs]{数论/bsgs.cpp}
+\section{母函数} 
+\lstinputlisting[style=cpp,caption=/数论/母函数]{数论/母函数.cpp} 
+\section{线性空间} 
+\lstinputlisting[style=cpp,caption=/数论/线性空间]{数论/线性空间.cpp}
+\section{线性基} 
+\lstinputlisting[style=cpp,caption=/数论/线性基]{数论/线性基.cpp}
+\section{拉格朗日插值}
+\subsection{拉格朗日插值}
+$$
+f(k) = \sum_{i = 0}^{n}y_i\prod_{i != j}^{}\frac{k - x[j]}{x[i] - x[j]}
+$$
+\lstinputlisting[style=cpp,caption=/数论/拉格朗日插值]{数论/拉格朗日插值.cpp}
+
+\subsection{在x取值连续时的做值}
+$$
+pre_i = \prod_{j = 0}^{i} k - j
+$$
+$$
+suf_i = \prod_{j = i}^n k - j
+$$
+$$
+f(k) = \sum_{i=0}^n y_i \frac{pre_{i-1} * suf_{i+1}}{fac[i] * fac[n - i]}
+$$
+\subsection{重心拉格朗日插值法}
+$$
+g = \prod_{i=1}^n k - x[i]
+$$
+$$
+t_i = \frac{y_i}{\prod_{j \not =i} x_i - x_j}
+$$
+$$
+f(k) = g\sum_{i = 0}^{n}  \frac{t_i}{(k - x[i])}
+$$
+\lstinputlisting[style=cpp,caption=/数论/重心拉格朗日插值法]{数论/重心拉格朗日插值法.cpp}
+\subsection{自然数连续幂次和}
+\lstinputlisting[style=cpp,caption=/数论/自然数连续幂次和]{数论/自然数连续幂次和.cpp}
+\section{FFT} 
+\subsection{卷积} 
+\lstinputlisting[style=cpp,caption=/数论/fft卷积]{数论/fft卷积.cpp} 
+\subsection{递归法} 
+\lstinputlisting[style=cpp,caption=/数论/fft递归法]{数论/fft递归法.cpp} 
+\subsection{迭代法} 
+\lstinputlisting[style=cpp,caption=/数论/fft迭代法]{数论/fft迭代法.cpp} 
+\subsection{字符串匹配} 
+\lstinputlisting[style=cpp,caption=/数论/fft字符串匹配]{数论/fft字符串匹配.cpp} 
+\subsection{NTT} 
+\lstinputlisting[style=cpp,caption=/数论/NTT]{数论/NTT.cpp} 
+\section{FWT}
+\lstinputlisting[style=cpp,caption=/数论/FWT]{数论/FWT.cpp}
+\section{反演定理} 
+\subsection{二项式反演} 
+\lstinputlisting[style=cpp,caption=/数论/二项式反演]{数论/二项式反演.cpp}
+\subsection{莫比乌斯反演} 
+\lstinputlisting[style=cpp,caption=/数论/莫比乌斯反演]{数论/莫比乌斯反演.cpp}
+\section{数的位数公式}
+\lstinputlisting[style=cpp,caption=/数论/数的位数公式]{数论/数的位数公式.cpp} 
+\section{常用公式} 
+\input{数论/常用定理、结论和推导.tex}
+
+\chapter{搜索}
+\section{二分查找}
+\subsection{整数二分查找}
+\lstinputlisting[style=cpp,caption=/搜索/整数二分查找]{搜索/整数二分查找.cpp} 
+\subsection{小数二分查找}
+\lstinputlisting[style=cpp,caption=/搜索/小数二分查找]{搜索/小数二分查找.cpp} 
+\section{三分查找}
+\lstinputlisting[style=cpp,caption=/搜索/三分查找]{搜索/三分查找.cpp} 
+\section{BFS}
+\subsection{多源BFS}
+多源 BFS 就是把满足初始条件的点全部塞入队列
+\lstinputlisting[style=cpp,caption=/搜索/多源BFS]{搜索/多源BFS.cpp} 
+\subsection{双向BFS}
+从起始点和目标点同时向中间 BFS ，两端接触算找到方案
+\lstinputlisting[style=cpp,caption=/搜索/双向BFS]{搜索/双向BFS.cpp} 
+BFS总结：\\
+BFS中的队列实际上就是一个简化的堆，可以保证队列内的数据，具有二段性，与单调性，所以第一次搜到的某点，就是最短路径。\\
+双端队列BFS：\\
+可以解决边权为0，1的最短路问题，遇到边权为0的直接放在队头，为1放在队尾，这样队列依旧保持二段性与单调性。
+\section{A-star算法}
+\lstinputlisting[style=cpp,caption=/搜索/A-star算法]{搜索/A-star算法.cpp} 
+\section{迭代加深}
+用 DFS 模仿 BFS 每次只搜索一层，尤其是对于分支特别多的搜索树，重复搜索相对于结果来说影响不大，但是BFS需要非常多的空间，DFS可以节省空间记录下搜索路径 \\
+A* + 迭代加深 = IDA*
+\lstinputlisting[style=cpp,caption=/搜索/迭代加深]{搜索/迭代加深.cpp} 
+\section{双向DFS}
+一般用来处理 “子集和” 问题， 从给定的 $N$ 个数中选几个，使他们的和最接近 $W$，也可以认为是一个大背包问题，最暴力的解法是 $O(2^N)$ 的暴力枚举。
+利用双向搜索的思想，把物品分成两半，从前一半中选出若干，可能达到 $0 ~ W$ 之间的所有重量值存到一个数组 $A$ 中，对数组排序，去重。
+然后进行第二次搜索，尝试从后一半礼物中选一些，对于每个可能达到的重量 $t$ ，在第一部分得到的素组 A 中二分查找 $\le W - t$ 的最大的一个，更新答案
+总复杂度接近 $O(N * x ^{\frac{N}{2}})$ 
+\lstinputlisting[style=cpp,caption=/搜索/双向DFS]{搜索/双向DFS.cpp} 
+\section{模拟退火}
+玄学算法，一般用在浮点数上，复杂度 $O(N^2)$ \\
+一般用于求某一连续多峰函数的最大值或者最小值
+\lstinputlisting[style=cpp,caption=/搜索/模拟退火]{搜索/模拟退火.cpp} 
+\section{双向DFS}
+\lstinputlisting[style=cpp,caption=/搜索/双向DFS]{搜索/双向DFS.cpp} 
+
+
+\chapter{图论}
+\section{图论的基础}
+\subsection{链式前向星}
+\lstinputlisting[style=cpp,caption=/图论/init]{图论/init.cpp}
+%通用
+\section{最短路}
+\subsection{堆优化Dijkstra}
+\lstinputlisting[style=cpp,caption=/图论/Dijkstra]{图论/Dijkstra.cpp}
+\subsection{SPFA}
+\lstinputlisting[style=cpp,caption=/图论/SPFA]{图论/SPFA.cpp}
+\subsection{Floyd}
+\lstinputlisting[style=cpp,caption=/图论/Floyd]{图论/Floyd.cpp}
+\section{分层图}
+\lstinputlisting[style=cpp,caption=/图论/分层图]{图论/分层图.cpp}
+\section{差分约束}
+\lstinputlisting[style=cpp,caption=/图论/差分约束]{图论/差分约束.cpp}
+\section{欧拉路径}
+\lstinputlisting[style=cpp,caption=/图论/欧拉路径]{图论/欧拉路径.cpp}
+\section{kruskal重构树}
+\lstinputlisting[style=cpp,caption=/图论/kruskal重构树]{图论/kruskal重构树.cpp}
+\section{Tarjan}
+\subsection{割点}
+\lstinputlisting[style=cpp,caption=/图论/割点]{图论/割点.cpp}
+\subsection{缩点}
+\lstinputlisting[style=cpp,caption=/图论/缩点]{图论/缩点.cpp}
+\subsection{点双}
+\lstinputlisting[style=cpp,caption=/图论/点双]{图论/点双.cpp}
+\section{2-SAT}
+\subsection{缩点法}
+\lstinputlisting[style=cpp,caption=/图论/2-SAT缩点法]{图论/2-SAT缩点法.cpp}
+\subsection{染色法}
+\lstinputlisting[style=cpp,caption=/图论/2-SAT染色法]{图论/2-SAT染色法.cpp}
+\section{斯坦纳树}
+\lstinputlisting[style=cpp,caption=/图论/斯坦纳树]{图论/斯坦纳树.cpp}
+%网络流
+\section{二分图匹配}
+\lstinputlisting[style=cpp,caption=/图论/二分图匹配]{图论/二分图匹配.cpp}
+\section{KM算法}
+\lstinputlisting[style=cpp,caption=/图论/KM算法]{图论/KM算法.cpp}
+\section{最大流}
+\subsection{Dinic}
+\lstinputlisting[style=cpp,caption=/图论/Dinic]{图论/Dinic.cpp}
+\subsection{最小割}
+\lstinputlisting[style=cpp,caption=/图论/最小割]{图论/最小割.cpp}
+\subsection{最大权闭合子图}
+\lstinputlisting[style=cpp,caption=/图论/最大权闭合子图]{图论/最大权闭合子图.cpp}
+\section{最小覆盖}
+\subsection{DAG最小点路径覆盖}
+\lstinputlisting[style=cpp,caption=/图论/最小点路径覆盖]{图论/最小点路径覆盖.cpp}
+\section{费用流}
+\subsection{SPFA费用流}
+\lstinputlisting[style=cpp,caption=/图论/SPFA费用流]{图论/SPFA费用流.cpp} 
+\section{有上下界的网络流}
+\subsection{无源汇上下界可行流}
+\lstinputlisting[style=cpp,caption=/图论/无源汇上下界可行流]{图论/无源汇上下界可行流.cpp} 
+\subsection{有源汇上下界网络流}
+\lstinputlisting[style=cpp,caption=/图论/有源汇上下界网络流]{图论/有源汇上下界网络流.cpp} 
+%树上相关
+\section{树的重心}
+\lstinputlisting[style=cpp,caption=/图论/树的重心]{图论/树的重心.cpp}
+\section{树的直径}
+\subsection{双dfs法}
+\lstinputlisting[style=cpp,caption=/图论/树的直径双dfs]{图论/树的直径双dfs.cpp}
+\subsection{树形dp法}
+\lstinputlisting[style=cpp,caption=/图论/树的直径树dp]{图论/树的直径树dp.cpp}
+\section{树上k半径覆盖}
+\lstinputlisting[style=cpp,caption=/图论/树上k半径覆盖]{图论/树上k半径覆盖.cpp}
+\section{dfs序}
+\lstinputlisting[style=cpp,caption=/图论/括号序列]{图论/括号序列.cpp}
+\section{括号序列}
+\lstinputlisting[style=cpp,caption=/图论/括号序列]{图论/括号序列.cpp}
+\section{LCA}
+\lstinputlisting[style=cpp,caption=/图论/LCA]{图论/LCA.cpp} 
+\section{点分治}
+\lstinputlisting[style=cpp,caption=/图论/点分治]{图论/点分治.cpp}
+\section{动态点分治}
+\lstinputlisting[style=cpp,caption=/图论/动态点分治]{图论/动态点分治.cpp}
+\section{树上差分}
+\lstinputlisting[style=cpp,caption=/图论/树上差分]{图论/树上差分.cpp}
+\section{树链剖分} 
+\lstinputlisting[style=cpp,caption=/图论/树链剖分]{图论/树链剖分.cpp}
+%小贴士
+\section{图论小贴士} 
+\input{图论/图论小贴士.txt}
+
+
+\chapter{数据结构} 
+\section{链表}
+\lstinputlisting[style=cpp,caption=/]{数据结构/链表.cpp} 
+\section{并查集} 
+\subsection{可撤销并查集} 
+\lstinputlisting[style=cpp,caption=/]{数据结构/可撤销并查集.cpp}
+\subsection{可持久化并查集} 
+\lstinputlisting[style=cpp,caption=/]{数据结构/可持久化并查集.cpp} 
+\subsection{种类并查集}
+\lstinputlisting[style=cpp,caption=/]{数据结构/种类并查集.cpp} 
+\section{启发式合并}
+\lstinputlisting[style=cpp,caption=/]{数据结构/启发式合并.cpp} 
+\section{ST表}
+\lstinputlisting[style=cpp,caption=/]{数据结构/ST表.cpp}
+\section{树状数组}
+\lstinputlisting[style=cpp,caption=/]{数据结构/树状数组.cpp}
+\section{二维平面} 
+\subsection{二维前缀和} 
+\lstinputlisting[style=cpp,caption=/数据结构/二维前缀和]{数据结构/二维前缀和.cpp}
+\subsection{二维ST表} 
+\lstinputlisting[style=cpp,caption=/数据结构/二维ST表]{数据结构/二维ST表.cpp}
+\section{莫队算法} 
+\subsection{无修莫队} 
+\lstinputlisting[style=cpp,caption=/数据结构/无修莫队]{数据结构/无修莫队.cpp}
+\subsection{回滚莫队} 
+\lstinputlisting[style=cpp,caption=/数据结构/回滚莫队]{数据结构/回滚莫队.cpp}
+\subsection{带修莫队} 
+\lstinputlisting[style=cpp,caption=/数据结构/带修莫队]{数据结构/带修莫队.cpp}
+\subsection{树上莫队} 
+\lstinputlisting[style=cpp,caption=/数据结构/树上莫队]{数据结构/树上莫队.cpp}
+\section{珂朵莉树}
+\lstinputlisting[style=cpp,caption=/数据结构/珂朵莉树]{数据结构/珂朵莉树.cpp}
+\section{动态开点线段树}
+\lstinputlisting[style=cpp,caption=/数据结构/动态开点线段树]{数据结构/动态开点线段树.cpp}
+\section{李超树}
+\lstinputlisting[style=cpp,caption=/数据结构/李超树]{数据结构/李超树.cpp}
+\section{左偏树}
+\lstinputlisting[style=cpp,caption=/数据结构/左偏树]{数据结构/左偏树.cpp}
+\section{Splay}
+\lstinputlisting[style=cpp,caption=/数据结构/Splay]{数据结构/Splay.cpp}
+\section{LCT}
+\lstinputlisting[style=cpp,caption=/数据结构/LCT]{数据结构/LCT.cpp}
+\section{主席树}
+\subsection{静态区间第k小}
+\lstinputlisting[style=cpp,caption=/数据结构/静态区间第k小]{数据结构/静态区间第k小.cpp}
+\section{cdq分治}
+\subsection{三维偏序问题}
+\lstinputlisting[style=cpp,caption=/数据结构/三维偏序]{数据结构/三维偏序.cpp}
+\section{kd树}
+\lstinputlisting[style=cpp,caption=/数据结构/kd树]{数据结构/kd树.cpp}
+
+
+\chapter{动态规划}
+\section{悬线法dp} 
+\lstinputlisting[style=cpp,caption=/动态规划/悬线法dp]{动态规划/悬线法dp.cpp} 
+\section{斜率优化dp}
+\lstinputlisting[style=cpp,caption=/动态规划/斜率优化dp]{动态规划/斜率优化dp.cpp} 
+\section{数位dp}
+\lstinputlisting[style=cpp,caption=/动态规划/数位dp]{动态规划/数位dp.cpp} 
+\section{错排公式}
+\lstinputlisting[style=cpp,caption=/动态规划/错排公式]{动态规划/错排公式.cpp} 
+
+
+\chapter{其他} 
+\section{STL}
+\subsection{multiset}
+\lstinputlisting[style=cpp,caption=/其他/multiset]{其他/multiset.cpp}
+\subsection{bitset}
+\lstinputlisting[style=cpp,caption=/其他/bitset]{其他/bitset.cpp}
+\section{表达式树} 
+\lstinputlisting[style=cpp,caption=/其他/表达式树]{其他/表达式树.cpp} 
+\section{切比雪夫距离} 
+\lstinputlisting[style=cpp,caption=/其他/切比雪夫距离]{其他/切比雪夫距离.cpp} 
+\section{离散化} 
+\lstinputlisting[style=cpp,caption=/其他/离散化]{其他/离散化.cpp}
+\section{区间离散化} 
+\lstinputlisting[style=cpp,caption=/其他/区间离散化]{其他/区间离散化.cpp}
+\section{注意事项}
+\input{其他/注意事项.txt}
+
+% \end{multicols}
+
+\end{document}
+
+% \end{multicols}
+
+% \end{document}
